@@ -1,25 +1,28 @@
 ## 准备工作
-```
-go get -u google.golang.org/grpc
-go get -u github.com/golang/protobuf/protoc-gen-go
+```bash
+brew install protobuf
+protoc --version #最新版本
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 export PATH=$PATH:$GOPATH/bin
 ```
-## 编译.proto文件命令
-```
-protoc --go_out=plugins=grpc:. hello.proto
-```
 ## 下载demo
-```
+```bash
 git clone https://github.com/grpc-example/simple.git
 cd simple
+go mod tidy
+```
+## 编译.proto文件命令
+```bash
+make api
 ```
 
 ## run server
-```
+```bash
 go run server.go
 ```
 
 ## run client
-```
-go run cli.go
+```bash
+go run client.go
 ```

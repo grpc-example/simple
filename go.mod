@@ -1,11 +1,16 @@
 module github.com/grpc-example/simple
 
-go 1.12
+go 1.20
 
 require (
-	github.com/golang/protobuf v1.3.3
-	golang.org/x/lint v0.0.0-20190313153728-d0100b6bd8b3 // indirect
-	golang.org/x/tools v0.0.0-20190524140312-2c0ae7006135 // indirect
-	google.golang.org/grpc v1.28.1
-	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
+	golang.org/x/net v0.8.0
+	google.golang.org/grpc v1.55.0
+	google.golang.org/protobuf v1.30.0
+)
+
+require (
+	github.com/golang/protobuf v1.5.3 // indirect
+	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/text v0.8.0 // indirect
+	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4 // indirect
 )

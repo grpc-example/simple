@@ -13,7 +13,9 @@ const (
 	PORT = ":50001"
 )
 
-type server struct{}
+type server struct {
+	pb.UnimplementedGreeterServer
+}
 
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	log.Println("request: ", in.Name)

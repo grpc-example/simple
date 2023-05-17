@@ -1,6 +1,7 @@
 package main
 
 import (
+	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"os"
 
@@ -14,7 +15,9 @@ const (
 )
 
 func main() {
-	conn, err := grpc.Dial(address, grpc.WithInsecure())
+	conn, err := grpc.Dial(address,
+		grpc.WithTransportCredentials(insecure.NewCredentials()), //禁用https
+	)
 
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
