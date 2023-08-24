@@ -1,6 +1,7 @@
 package main
 
 import (
+	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 
@@ -30,6 +31,7 @@ func main() {
 	}
 
 	s := grpc.NewServer()
+	reflection.Register(s)
 	grpc.EnableTracing = true
 	pb.RegisterGreeterServer(s, &server{})
 	log.Println("rpc服务已经开启")
